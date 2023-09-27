@@ -1,0 +1,37 @@
+1. Why did you choose the tools, libraries, and language you used for the coding exercise?
+FastAPI:
+Reason for Choosing:
+FastAPI is a new and fast web framework for APIs.
+It provides automatic interactive API documentation, which is extremely useful for testing and understanding the API.
+Language:
+Python is chosen because it is widely known, versatile, and allows for quick development and testing.
+Pydantic:
+Reason for Choosing:
+Pydantic is used for data validation. It automatically validates the data to ensure it meets the specified structure, which reduces the amount of manual data validation code required.
+JavaScript (Node.js):
+Reason for Choosing:
+The client code is written in JavaScript (Node.js) to demonstrate that the API can be accessed from different environments and languages. Additionally, API's are frequently called by frontend applications written in JavaScript or TypeScript. In order to simulate this, JavaScript was chosen to perform API call testing.
+
+2. What are the advantages and disadvantages of your solution?
+Advantages:
+Scalability:
+FastAPI is one of the fastest frameworks for building APIs with Python, especially for code that uses async features, making it suitable for scalable applications.
+Data Validation:
+Pydantic automatically handles data validation, reducing the chance of errors and ensuring that the data meets the required structure.
+Automatic Documentation:
+FastAPI provides automatic interactive API documentation using Swagger UI and ReDoc, making it easier to test and understand the API.
+Asynchronous Processing:
+The use of async and await allows handling multiple requests simultaneously, improving the efficiency and performance of the API.
+Disadvantages:
+Complexity for Small Applications:
+
+The use of FastAPI and async programming might be an overkill for small, simple APIs, adding unnecessary complexity.
+Limited by Python’s GIL:
+
+Eventhough FastAPI supports asynchronous endpoints, Python is still limited by the Global Interpreter Lock, which may limit performance in CPU-bound scenarios.
+Heapq for Transaction Ordering:
+
+The use of heapq to keep transactions ordered by timestamp is efficient for adding transactions and popping the oldest transactions (O(log n)), but can be inefficient for arbitrary removals and modifications. Additionally, a binary heap does not support efficient arbitrary deletions or searches, which might be a limitation depending on the use case of future endpoints.
+Global Variables:
+
+The use of global variables (transactions, balances, global_balance) for storing state might lead to issues in a multi-threaded or multi-process environment, and it does not scale horizontally across multiple servers.
